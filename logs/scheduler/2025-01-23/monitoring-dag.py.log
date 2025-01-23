@@ -6560,3 +6560,482 @@ Traceback (most recent call last):
 KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
 [2025-01-23T10:59:47.728+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
 [2025-01-23T10:59:47.735+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.935 seconds
+[2025-01-23T11:15:47.377+0000] {processor.py:186} INFO - Started process (PID=54) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:15:47.378+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:15:47.379+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:15:47.379+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:15:51.671+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:15:51.663+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:15:51.674+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:15:51.683+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 4.311 seconds
+[2025-01-23T11:16:21.975+0000] {processor.py:186} INFO - Started process (PID=87) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:16:21.975+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:16:21.977+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:16:21.976+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:16:24.667+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:16:24.664+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:16:24.668+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:16:24.676+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.706 seconds
+[2025-01-23T11:16:54.948+0000] {processor.py:186} INFO - Started process (PID=114) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:16:54.949+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:16:54.950+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:16:54.950+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:16:57.558+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:16:57.553+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:16:57.559+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:16:57.565+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.621 seconds
+[2025-01-23T11:17:27.901+0000] {processor.py:186} INFO - Started process (PID=141) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:17:27.901+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:17:27.902+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:17:27.902+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:17:30.565+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:17:30.561+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:17:30.567+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:17:30.574+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.678 seconds
+[2025-01-23T11:18:00.885+0000] {processor.py:186} INFO - Started process (PID=168) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:18:00.886+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:18:00.887+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:18:00.887+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:18:03.840+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:18:03.837+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:18:03.841+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:18:03.848+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.967 seconds
+[2025-01-23T11:18:34.138+0000] {processor.py:186} INFO - Started process (PID=195) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:18:34.139+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:18:34.139+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:18:34.139+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:18:36.903+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:18:36.899+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:18:36.904+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:18:36.911+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.777 seconds
+[2025-01-23T11:19:07.076+0000] {processor.py:186} INFO - Started process (PID=222) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:19:07.077+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:19:07.078+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:19:07.078+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:19:09.916+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:19:09.911+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:19:09.917+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:19:09.925+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.853 seconds
+[2025-01-23T11:19:40.234+0000] {processor.py:186} INFO - Started process (PID=249) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:19:40.235+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:19:40.236+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:19:40.236+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:19:42.772+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:19:42.769+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:19:42.773+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:19:42.780+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.550 seconds
+[2025-01-23T11:20:13.274+0000] {processor.py:186} INFO - Started process (PID=276) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:20:13.275+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:20:13.276+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:20:13.276+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:20:15.850+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:20:15.847+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:20:15.851+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:20:15.858+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.590 seconds
+[2025-01-23T11:20:46.087+0000] {processor.py:186} INFO - Started process (PID=303) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:20:46.087+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:20:46.089+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:20:46.088+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:20:48.709+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:20:48.706+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:20:48.710+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:20:48.718+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.636 seconds
+[2025-01-23T11:21:19.029+0000] {processor.py:186} INFO - Started process (PID=331) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:21:19.030+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:21:19.031+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:21:19.031+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:21:21.861+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:21:21.857+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:21:21.862+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:21:21.869+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.845 seconds
+[2025-01-23T11:21:52.207+0000] {processor.py:186} INFO - Started process (PID=364) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:21:52.208+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:21:52.209+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:21:52.209+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:21:54.781+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:21:54.775+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:21:54.782+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:21:54.790+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.587 seconds
+[2025-01-23T11:22:25.039+0000] {processor.py:186} INFO - Started process (PID=391) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:22:25.039+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:22:25.041+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:22:25.040+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:22:27.579+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:22:27.576+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:22:27.580+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:22:27.587+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.555 seconds
+[2025-01-23T11:22:57.859+0000] {processor.py:186} INFO - Started process (PID=418) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:22:57.859+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:22:57.860+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:22:57.860+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:23:00.635+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:23:00.632+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:23:00.637+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:23:00.644+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.790 seconds
+[2025-01-23T11:23:30.921+0000] {processor.py:186} INFO - Started process (PID=445) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:23:30.922+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:23:30.923+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:23:30.923+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:23:33.379+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:23:33.376+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:23:33.380+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:23:33.387+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.471 seconds
+[2025-01-23T11:24:03.712+0000] {processor.py:186} INFO - Started process (PID=472) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:24:03.713+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:24:03.714+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:24:03.714+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:24:06.619+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:24:06.615+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:24:06.620+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:24:06.628+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.920 seconds
+[2025-01-23T11:24:36.972+0000] {processor.py:186} INFO - Started process (PID=499) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:24:36.972+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:24:36.973+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:24:36.973+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:24:39.676+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:24:39.672+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:24:39.677+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:24:39.684+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.717 seconds
+[2025-01-23T11:25:09.812+0000] {processor.py:186} INFO - Started process (PID=526) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:25:09.812+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:25:09.814+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:25:09.813+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:25:12.456+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:25:12.453+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:25:12.458+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:25:12.465+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.658 seconds
+[2025-01-23T11:25:42.795+0000] {processor.py:186} INFO - Started process (PID=553) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:25:42.797+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:25:42.798+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:25:42.798+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:25:45.582+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:25:45.578+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:25:45.584+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:25:45.591+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.803 seconds
+[2025-01-23T11:26:15.847+0000] {processor.py:186} INFO - Started process (PID=580) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:26:15.848+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:26:15.850+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:26:15.849+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:26:18.576+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:26:18.568+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:26:18.578+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:26:18.586+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.745 seconds
+[2025-01-23T11:26:48.822+0000] {processor.py:186} INFO - Started process (PID=607) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:26:48.826+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:26:48.830+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:26:48.829+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:26:51.595+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:26:51.592+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:26:51.597+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:26:51.603+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.787 seconds
+[2025-01-23T11:27:21.870+0000] {processor.py:186} INFO - Started process (PID=640) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:27:21.871+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:27:21.872+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:27:21.872+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:27:24.598+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:27:24.595+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:27:24.599+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:27:24.627+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.763 seconds
+[2025-01-23T11:27:54.936+0000] {processor.py:186} INFO - Started process (PID=668) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:27:54.937+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:27:54.938+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:27:54.938+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:27:57.560+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:27:57.554+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:27:57.561+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:27:57.583+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.655 seconds
+[2025-01-23T11:28:27.639+0000] {processor.py:186} INFO - Started process (PID=695) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:28:27.640+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:28:27.641+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:28:27.641+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:28:30.249+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:28:30.245+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:28:30.250+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:28:30.308+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.673 seconds
+[2025-01-23T11:29:00.591+0000] {processor.py:186} INFO - Started process (PID=722) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:29:00.592+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:29:00.594+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:29:00.594+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:29:03.245+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:29:03.238+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:29:03.246+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:29:03.253+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.666 seconds
+[2025-01-23T11:29:33.410+0000] {processor.py:186} INFO - Started process (PID=749) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:29:33.411+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:29:33.412+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:29:33.412+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:29:35.923+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:29:35.917+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:29:35.924+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:29:35.932+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.527 seconds
+[2025-01-23T11:30:06.230+0000] {processor.py:186} INFO - Started process (PID=776) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:30:06.230+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:30:06.232+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:30:06.231+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:30:08.849+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:30:08.840+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:30:08.850+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:30:08.857+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.632 seconds
+[2025-01-23T11:30:39.158+0000] {processor.py:186} INFO - Started process (PID=803) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:30:39.158+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:30:39.160+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:30:39.159+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:30:41.838+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:30:41.834+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/monitoring-dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/monitoring-dag.py", line 23, in <module>
+    EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/variable.py", line 145, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable EVIDENTLY_CLOUD_TOKEN does not exist'
+[2025-01-23T11:30:41.839+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:30:41.846+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.692 seconds
+[2025-01-23T11:31:12.268+0000] {processor.py:186} INFO - Started process (PID=830) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-23T11:31:12.270+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-23T11:31:12.272+0000] {logging_mixin.py:190} INFO - [2025-01-23T11:31:12.272+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py

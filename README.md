@@ -64,7 +64,7 @@ s3://S3bucket_name/covertype/
 2. **Environment Setup**
 ```bash
 # Clone repository
-git clone https://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@github.com/Anne035-data/4-final.git
+git clone https://github.com/Anne035-data/4-final.git
 cd 4-final
 
 # Create environment files :

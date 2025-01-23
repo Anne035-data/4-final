@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+    
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        NEON_DATABASE_URL     = credentials('NEON_DATABASE_URL')
+        S3_BUCKET            = credentials('S3_BUCKET')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Rom1Legrand/IAI-B4-MLops_pipeline_CoverTypeForest.git'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh '''
+                    cd models
+                    python3 -m pytest test.py -v
+                '''
+            }
+        }
+    }
+    
+    post {
+        always {
+            sh '''
+                sleep 5
+                echo "Récupération du rapport de test..."
+                LATEST_REPORT=$(aws s3 ls s3://${S3_BUCKET}/covertype/test_reports/ | grep "test_report_" | sort | tail -n 1 | awk '{print $4}')
+                aws s3 cp s3://${S3_BUCKET}/covertype/test_reports/${LATEST_REPORT} test_report.csv
+            '''
+            archiveArtifacts artifacts: 'test_report.csv'
+        }
+        success {
+            echo 'Tests réussis!'
+        }
+        failure {
+            echo 'Tests échoués - voir rapport pour détails'
+        }
+    }
+}

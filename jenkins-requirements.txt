@@ -1,0 +1,18 @@
+# MLOps essentials
+mlflow==2.15.0 
+evidently==0.4.17
+
+# Utilities
+requests 
+python-dotenv
+
+# Quality assurance (spécifique à Jenkins)
+pytest  #tests unitaires
+black #formatage du code
+pylint #analyse statique du code
+psycopg2-binary #connexion à la base de données
+
+#com
+boto3
+sqlalchemy
+pandas

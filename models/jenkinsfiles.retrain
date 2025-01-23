@@ -1,0 +1,38 @@
+pipeline {
+   agent any
+   
+   environment {
+       AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
+       AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+       NEON_DATABASE_URL     = credentials('NEON_DATABASE_URL')
+       DB_STORE_URI         = credentials('NEON_DATABASE_URL')
+       S3_BUCKET            = credentials('S3_BUCKET')
+   }
+
+   stages {
+       stage('Checkout') {
+           steps {
+               git branch: 'main',
+                   url: 'https://github.com/Rom1Legrand/IAI-B4-MLops_pipeline_CoverTypeForest.git'
+           }
+       }
+
+       stage('Train Model') {
+           steps {
+               sh '''
+                   cd models
+                   python3 train_model_version_simple.py
+               '''
+           }
+       }
+   }
+   
+   post {
+       success {
+           echo 'Model retrained successfully!'
+       }
+       failure {
+           echo 'Model retraining failed!'
+       }
+   }
+}

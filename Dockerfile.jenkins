@@ -1,0 +1,46 @@
+# Dockerfile.jenkins
+FROM jenkins/jenkins:lts-jdk11
+
+USER root
+
+# Installation des outils système essentiels
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    python3-venv \
+    python3-dev \
+    libpq-dev \
+    gcc \
+    git \
+    curl \
+    unzip \
+    docker.io \
+    docker-compose \
+    && rm -rf /var/lib/apt/lists/*
+
+# Installation d'AWS CLI
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    ./aws/install && \
+    rm -rf aws awscliv2.zip
+
+# Ajout de jenkins au groupe docker existant
+RUN usermod -aG docker jenkins
+
+# Configuration de l'environnement Python
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Installation des dépendances Python optimisées
+COPY jenkins-requirements.txt /tmp/requirements.txt
+RUN . /opt/venv/bin/activate && \
+    pip install --no-cache-dir -r /tmp/requirements.txt
+
+# Configuration des dossiers Jenkins
+RUN mkdir -p /var/jenkins_home/monitoring_scripts && \
+    mkdir -p /var/jenkins_home/workspace && \
+    chown -R jenkins:jenkins /var/jenkins_home
+
+USER jenkins
+
+EXPOSE 8080 50000

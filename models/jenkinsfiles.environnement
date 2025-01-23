@@ -1,0 +1,79 @@
+pipeline {
+    agent any
+    
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        NEON_DATABASE_URL     = credentials('NEON_DATABASE_URL')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Rom1Legrand/IAI-B4-MLops_pipeline_CoverTypeForest.git'
+            }
+        }
+
+        stage('Environment Check') {
+            steps {
+                sh '''
+                    echo "Checking Docker installation..."
+                    docker --version
+                    
+                    echo "Checking Python environment..."
+                    python3 --version
+                    pip3 list
+                '''
+            }
+        }
+        
+        stage('Test AWS S3 Connection') {
+            steps {
+                sh '''
+                    python3 -c "
+import boto3
+import os
+
+s3 = boto3.client('s3')
+try:
+    # Test listing buckets
+    s3.list_buckets()
+    print('AWS S3 connection successful')
+except Exception as e:
+    print('AWS S3 connection failed:', str(e))
+    exit(1)
+"
+                '''
+            }
+        }
+        
+        stage('Test NeonDB Connection') {
+            steps {
+                sh '''
+                    python3 -c "
+import psycopg2
+import os
+
+try:
+    conn = psycopg2.connect(os.environ['NEON_DATABASE_URL'])
+    print('NeonDB connection successful')
+    conn.close()
+except Exception as e:
+    print('NeonDB connection failed:', str(e))
+    exit(1)
+"
+                '''
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Environment setup completed successfully!'
+        }
+        failure {
+            echo 'Environment setup failed! Check the logs for details.'
+        }
+    }
+}

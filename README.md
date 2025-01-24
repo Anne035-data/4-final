@@ -7,6 +7,7 @@
 ![Jenkins](https://img.shields.io/badge/Jenkins-LTS-red.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.26.0-red.svg)
 ![Evidently](https://img.shields.io/badge/Evidently-0.4.17-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.109.0-blue.svg)
 
 ## 📋 Overview
 
@@ -15,8 +16,8 @@ Automated MLOps pipeline for Forest Cover Type prediction, featuring continuous 
 The project is divided into several key parts, each managed by different team members:
 
 Kevin: Responsible for data ingestion, model training, and versioning with MLflow.
-Anne: In charge of monitoring and testing using Jenkins
-Romain: Focused on production deployment, using Airflow and Evidently.ia for automated tasks and Streamlit dashboard.
+Anne: In charge of testing using Jenkins
+Romain: Focused on production deployment, monitoring, using Airflow and Evidently.ia for automated tasks, Streamlit dashboard and FastAPI for random data generation
 
 - Project theme : https://www.kaggle.com/datasets/uciml/forest-cover-type-dataset
 
@@ -31,6 +32,7 @@ Romain: Focused on production deployment, using Airflow and Evidently.ia for aut
 - **CI/CD**: Jenkins
 - **Monitoring**: Evidently.ai
 - **Dashboard**: Streamlit
+- **Data Generation**: FastAPI
 
 ## 🚀 Quick Start
 
@@ -53,6 +55,7 @@ s3://S3bucket_name/covertype/
 │   └── model.pkl
 ├── new_data/
 │   └── covtype_20.csv
+│   └── covtype_20_random.csv
 │   └── covtype_sample_drift.csv
 ├── prediction/
 ├── reference/
@@ -85,8 +88,7 @@ S3_BUCKET=your_bucket_name
 AIRFLOW_USERNAME=xxxx
 MLFLOW_TRACKING_USERNAME=xxxx
 JENKINS_ADMIN_ID=xxxx
-# MLflow Configuration
-MLFLOW_DEFAULT_ARTIFACT_ROOT=s3://your_bucket/your_project_name/
+
 # NEON_DATABASE_URL (backend store for mlflow)
 NEON_DATABASE_URL=your_posgres_neondb_url
 
@@ -125,8 +127,11 @@ docker-compose up -d
 
 ## 🔄 Pipeline Flow
 
+### Data Generation
+- Launch "generate" on FastAPI for create a covtype_20_random.csv in S3.
+
 ### Data Ingestion
-- Monitor S3 for new data (covtype_20.csv ou covtype_sample_drift.csv for test)
+- Monitor S3 for new data (covtype_20_random.csv  ou covtype_sample_drift.csv for test)
 - Trigger drift detection
 
 ### Drift Detection
@@ -162,12 +167,18 @@ docker-compose up -d
 - Test results visualization
 - Drift analysis
 
+### FastAPI
+
+- /generate : création covtype_20_random.csv
+- auto upload to S3
+
 ## 📊 Data
 
 Dataset: [Forest Cover Type](https://archive.ics.uci.edu/static/public/31/covertype.zip)
 
 - Training: 80% (covtype_80.csv)
 - Testing: 20% (covtype_20.csv)
+- Random_testing_API_generated from 20%  : covtype_20_random.csv
 
 ## 📝 Notes
 - Jenkins uses Docker-out-of-Docker configuration
@@ -178,4 +189,4 @@ Dataset: [Forest Cover Type](https://archive.ics.uci.edu/static/public/31/covert
 ## 👥 Team
 - **Kevin**: Data ingestion, model training, MLflow
 - **Anne**: Monitoring, Jenkins testing
-- **Romain**: Deployment, Airflow, Streamlit
+- **Romain**: Deployment, Airflow, Evidently.IA, Streamlit, FastAPI

@@ -27,6 +27,16 @@ pipeline {
                 '''
             }
         }
+
+        stage('Debug Credentials') {
+            steps {
+                sh '''
+                    echo "AWS Access Key: ${AWS_ACCESS_KEY_ID}"
+                    echo "S3 Bucket: ${S3_BUCKET}"
+                    echo "Database URL exists: ${NEON_DATABASE_URL != null}"
+                '''
+            }
+        }
         
         stage('Test AWS S3 Connection') {
             steps {

@@ -5,7 +5,6 @@ pipeline {
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
         NEON_DATABASE_URL     = credentials('NEON_DATABASE_URL')
-        S3_BUCKET            = '4-final-project'
     }
 
     stages {

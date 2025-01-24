@@ -15181,3 +15181,59 @@ KeyError: 'Variable S3_BUCKET does not exist'
 [2025-01-24T20:16:51.590+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:16:51.590+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2025-01-24T20:16:51.599+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:16:51.599+0000] {dag.py:4180} INFO - Setting next_dagrun for detect_data_drift_notify_retrain to None, run_after=None
 [2025-01-24T20:16:51.612+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.762 seconds
+[2025-01-24T20:17:21.947+0000] {processor.py:186} INFO - Started process (PID=11900) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:17:21.947+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-24T20:17:21.949+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:17:21.948+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:17:24.446+0000] {processor.py:925} INFO - DAG(s) 'detect_data_drift_notify_retrain' retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:17:24.463+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:17:24.462+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-24T20:17:24.471+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:17:24.471+0000] {dag.py:4180} INFO - Setting next_dagrun for detect_data_drift_notify_retrain to None, run_after=None
+[2025-01-24T20:17:24.485+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.543 seconds
+[2025-01-24T20:17:54.809+0000] {processor.py:186} INFO - Started process (PID=11927) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:17:54.809+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-24T20:17:54.810+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:17:54.810+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:17:57.329+0000] {processor.py:925} INFO - DAG(s) 'detect_data_drift_notify_retrain' retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:17:57.353+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:17:57.352+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-24T20:17:57.363+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:17:57.363+0000] {dag.py:4180} INFO - Setting next_dagrun for detect_data_drift_notify_retrain to None, run_after=None
+[2025-01-24T20:17:57.379+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.575 seconds
+[2025-01-24T20:18:27.700+0000] {processor.py:186} INFO - Started process (PID=11954) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:18:27.700+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-24T20:18:27.702+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:18:27.701+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:18:30.178+0000] {processor.py:925} INFO - DAG(s) 'detect_data_drift_notify_retrain' retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:18:30.195+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:18:30.194+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-24T20:18:30.204+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:18:30.204+0000] {dag.py:4180} INFO - Setting next_dagrun for detect_data_drift_notify_retrain to None, run_after=None
+[2025-01-24T20:18:30.217+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.522 seconds
+[2025-01-24T20:19:00.448+0000] {processor.py:186} INFO - Started process (PID=11981) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:19:00.449+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-24T20:19:00.450+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:19:00.450+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:19:03.082+0000] {processor.py:925} INFO - DAG(s) 'detect_data_drift_notify_retrain' retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:19:03.098+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:19:03.098+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-24T20:19:03.108+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:19:03.108+0000] {dag.py:4180} INFO - Setting next_dagrun for detect_data_drift_notify_retrain to None, run_after=None
+[2025-01-24T20:19:03.122+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.679 seconds
+[2025-01-24T20:19:33.451+0000] {processor.py:186} INFO - Started process (PID=12008) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:19:33.451+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-24T20:19:33.453+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:19:33.452+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:19:36.215+0000] {processor.py:925} INFO - DAG(s) 'detect_data_drift_notify_retrain' retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:19:36.234+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:19:36.232+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-24T20:19:36.242+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:19:36.242+0000] {dag.py:4180} INFO - Setting next_dagrun for detect_data_drift_notify_retrain to None, run_after=None
+[2025-01-24T20:19:36.256+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.814 seconds
+[2025-01-24T20:20:06.561+0000] {processor.py:186} INFO - Started process (PID=12035) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:20:06.562+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-24T20:20:06.563+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:20:06.563+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:20:09.201+0000] {processor.py:925} INFO - DAG(s) 'detect_data_drift_notify_retrain' retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:20:09.216+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:20:09.216+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-24T20:20:09.225+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:20:09.224+0000] {dag.py:4180} INFO - Setting next_dagrun for detect_data_drift_notify_retrain to None, run_after=None
+[2025-01-24T20:20:09.238+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.683 seconds
+[2025-01-24T20:20:39.447+0000] {processor.py:186} INFO - Started process (PID=12062) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:20:39.448+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-24T20:20:39.449+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:20:39.449+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:20:42.173+0000] {processor.py:925} INFO - DAG(s) 'detect_data_drift_notify_retrain' retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:20:42.189+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:20:42.188+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-24T20:20:42.197+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:20:42.197+0000] {dag.py:4180} INFO - Setting next_dagrun for detect_data_drift_notify_retrain to None, run_after=None
+[2025-01-24T20:20:42.210+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.769 seconds
+[2025-01-24T20:21:12.541+0000] {processor.py:186} INFO - Started process (PID=12095) to work on /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:21:12.542+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/monitoring-dag.py for tasks to queue
+[2025-01-24T20:21:12.543+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:21:12.543+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:21:15.221+0000] {processor.py:925} INFO - DAG(s) 'detect_data_drift_notify_retrain' retrieved from /opt/airflow/dags/monitoring-dag.py
+[2025-01-24T20:21:15.239+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:21:15.238+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-24T20:21:15.248+0000] {logging_mixin.py:190} INFO - [2025-01-24T20:21:15.248+0000] {dag.py:4180} INFO - Setting next_dagrun for detect_data_drift_notify_retrain to None, run_after=None
+[2025-01-24T20:21:15.262+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/monitoring-dag.py took 2.728 seconds

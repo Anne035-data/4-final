@@ -75,7 +75,7 @@ cd 4-final
 AIRFLOW_UID=50000
 # Service URLs & Ports
 AIRFLOW_API_URL=http://airflow-webserver:8080
-MLFLOW_TRACKING_URI=http://mlflow:5000
+MLFLOW_TRACKING_URI=http://mlflow:5000 or Hugging Face space URL (https://huggingface.co/spaces/username/space_name)
 JENKINS_URL=http://jenkins:8080
 JENKINS_OPTS="--prefix=/jenkins"
 JENKINS_HOME=/var/jenkins_home
@@ -86,7 +86,6 @@ SMTP_PORT=587
 S3_BUCKET=your_bucket_name
 # Service Default Users (and cf docker-compose)
 AIRFLOW_USERNAME=xxxx
-MLFLOW_TRACKING_USERNAME=xxxx
 JENKINS_ADMIN_ID=xxxx
 
 # NEON_DATABASE_URL (backend store for mlflow)
@@ -101,7 +100,6 @@ EMAIL_USER=your_email
 EMAIL_PASSWORD=your_email_password_or_token_key
 # Service Passwords
 AIRFLOW_PASSWORD=xxxx
-MLFLOW_TRACKING_PASSWORD=xxxx
 JENKINS_ADMIN_PASSWORD=xxxx
 
 ## Configure Credentials

@@ -28,6 +28,7 @@ pipeline {
     
     post {
         always {
+            node {
             sh '''
                 sleep 5
                 echo "Récupération du rapport de test..."
@@ -41,6 +42,7 @@ pipeline {
         }
         failure {
             echo 'Tests échoués - voir rapport pour détails'
+            }
         }
     }
 }

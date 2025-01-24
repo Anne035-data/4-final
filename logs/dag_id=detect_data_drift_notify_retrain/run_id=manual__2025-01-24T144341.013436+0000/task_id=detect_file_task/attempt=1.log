@@ -1,0 +1,27 @@
+[2025-01-24T14:43:46.275+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-01-24T14:43:46.285+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: detect_data_drift_notify_retrain.detect_file_task manual__2025-01-24T14:43:41.013436+00:00 [queued]>
+[2025-01-24T14:43:46.290+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: detect_data_drift_notify_retrain.detect_file_task manual__2025-01-24T14:43:41.013436+00:00 [queued]>
+[2025-01-24T14:43:46.292+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-01-24T14:43:46.303+0000] {taskinstance.py:2888} INFO - Executing <Task(BranchPythonOperator): detect_file_task> on 2025-01-24 14:43:41.013436+00:00
+[2025-01-24T14:43:46.314+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=596) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-01-24T14:43:46.317+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'detect_data_drift_notify_retrain', 'detect_file_task', 'manual__2025-01-24T14:43:41.013436+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/monitoring-dag.py', '--cfg-path', '/tmp/tmpajfjste7']
+[2025-01-24T14:43:46.320+0000] {standard_task_runner.py:72} INFO - Started process 617 to run task
+[2025-01-24T14:43:46.320+0000] {standard_task_runner.py:105} INFO - Job 3: Subtask detect_file_task
+[2025-01-24T14:43:46.369+0000] {task_command.py:467} INFO - Running <TaskInstance: detect_data_drift_notify_retrain.detect_file_task manual__2025-01-24T14:43:41.013436+00:00 [running]> on host ea227877a49b
+[2025-01-24T14:43:46.422+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='RL' AIRFLOW_CTX_DAG_ID='detect_data_drift_notify_retrain' AIRFLOW_CTX_TASK_ID='detect_file_task' AIRFLOW_CTX_EXECUTION_DATE='2025-01-24T14:43:41.013436+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-01-24T14:43:41.013436+00:00'
+[2025-01-24T14:43:46.423+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-01-24T14:43:46.444+0000] {baseoperator.py:405} WARNING - BranchPythonOperator.execute cannot be called outside TaskInstance!
+[2025-01-24T14:43:46.458+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2025-01-24T14:43:46.584+0000] {monitoring-dag.py:49} INFO - Checking file in S3: 4-final-project/covertype/new_data/covtype_sample_drift.csv
+[2025-01-24T14:43:47.335+0000] {monitoring-dag.py:54} ERROR - Error checking S3: An error occurred (404) when calling the HeadObject operation: Not Found
+[2025-01-24T14:43:47.339+0000] {python.py:240} INFO - Done. Returned value was: no_file_found_task
+[2025-01-24T14:43:47.342+0000] {branch.py:38} INFO - Branch into no_file_found_task
+[2025-01-24T14:43:47.343+0000] {skipmixin.py:230} INFO - Following branch ('no_file_found_task',)
+[2025-01-24T14:43:47.361+0000] {skipmixin.py:278} INFO - Skipping tasks [('detect_data_drift_task', -1)]
+[2025-01-24T14:43:47.390+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-01-24T14:43:47.390+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=detect_data_drift_notify_retrain, task_id=detect_file_task, run_id=manual__2025-01-24T14:43:41.013436+00:00, execution_date=20250124T144341, start_date=20250124T144346, end_date=20250124T144347
+[2025-01-24T14:43:47.421+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-01-24T14:43:47.455+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-01-24T14:43:47.461+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

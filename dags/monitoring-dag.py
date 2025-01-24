@@ -20,17 +20,20 @@ import boto3
 logging.basicConfig(level=logging.DEBUG)
 
 # Variables Airflow
-EVIDENTLY_CLOUD_TOKEN = Variable.get("EVIDENTLY_CLOUD_TOKEN") 
-EVIDENTLY_CLOUD_PROJECT_ID = Variable.get("EVIDENTLY_CLOUD_PROJECT_ID")
-S3_BUCKET = Variable.get("S3_BUCKET")
+EVIDENTLY_CLOUD_TOKEN = os.getenv('EVIDENTLY_CLOUD_TOKEN') or Variable.get("EVIDENTLY_CLOUD_TOKEN")
+EVIDENTLY_CLOUD_PROJECT_ID = os.getenv('EVIDENTLY_CLOUD_PROJECT_ID') or Variable.get("EVIDENTLY_CLOUD_PROJECT_ID")
+S3_BUCKET = os.getenv('S3_BUCKET') or Variable.get("S3_BUCKET", default_var=None)
+if not S3_BUCKET:
+    raise ValueError("S3_BUCKET must be set in environment or Airflow variables")
+
 
 # accès S3
-REFERENCE_FILE = 'covertype/reference/covtype_80.csv'
-# NEW_DATA_FILE = 'covertype/new_data/covtype_20.csv'
+#REFERENCE_FILE = 'covertype/reference/covtype_80.csv'
+NEW_DATA_FILE = 'covertype/new_data/covtype_20.csv'
 # fichier à utiliser pour test drift
 NEW_DATA_FILE = 'covertype/new_data/covtype_sample_drift.csv'
 
-# Colonnes à analyser (gardez les mêmes que dans le notebook / entrainement du model)
+# Colonnes à analyser 
 COLUMNS_TO_ANALYZE = [
     "Elevation", "Aspect", "Slope", "Horizontal_Distance_To_Hydrology",
     "Vertical_Distance_To_Hydrology", "Horizontal_Distance_To_Roadways",

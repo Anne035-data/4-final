@@ -7,6 +7,10 @@ sdk: docker
 pinned: false
 license: apache-2.0
 ---
+| title | emoji | colorFrom | colorTo | sdk | pinned | license |
+|-------|-------|-----------|---------|-----|---------|---------|
+| MLflow Server | 📈 | pink | green | docker | false | apache-2.0 |
+
 # MLflow Tracking Server
 
 MLflow tracking server for Forest Cover Type prediction project.

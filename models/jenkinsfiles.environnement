@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/Anne035-data/4-final.git'
+                    url: 'https://github.com/Rom1Legrand/IAI-B4-MLops_pipeline_CoverTypeForest.git'
             }
         }
 
@@ -24,16 +24,6 @@ pipeline {
                     echo "Checking Python environment..."
                     python3 --version
                     pip3 list
-                '''
-            }
-        }
-
-        stage('Debug Credentials') {
-            steps {
-                sh '''
-                    echo "AWS Access Key: ${AWS_ACCESS_KEY_ID}"
-                    echo "S3 Bucket: ${S3_BUCKET}"
-                    echo "Database URL exists: ${NEON_DATABASE_URL != null}"
                 '''
             }
         }

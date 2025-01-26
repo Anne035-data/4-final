@@ -12,7 +12,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/Anne035-data/4-final.git'
+                    url: 'https://github.com/Rom1Legrand/IAI-B4-MLops_pipeline_CoverTypeForest.git'
             }
         }
 
@@ -28,15 +28,13 @@ pipeline {
     
     post {
         always {
-            script {
-                sh '''
-                    sleep 5
-                    echo "Récupération du rapport de test..."
-                    LATEST_REPORT=$(aws s3 ls s3://${S3_BUCKET}/covertype/test_reports/ | grep "test_report_" | sort | tail -n 1 | awk '{print $4}')
-                    aws s3 cp s3://${S3_BUCKET}/covertype/test_reports/${LATEST_REPORT} test_report.csv
-                '''
-                archiveArtifacts artifacts: 'test_report.csv'
-            }
+            sh '''
+                sleep 5
+                echo "Récupération du rapport de test..."
+                LATEST_REPORT=$(aws s3 ls s3://${S3_BUCKET}/covertype/test_reports/ | grep "test_report_" | sort | tail -n 1 | awk '{print $4}')
+                aws s3 cp s3://${S3_BUCKET}/covertype/test_reports/${LATEST_REPORT} test_report.csv
+            '''
+            archiveArtifacts artifacts: 'test_report.csv'
         }
         success {
             echo 'Tests réussis!'

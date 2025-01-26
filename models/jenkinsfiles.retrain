@@ -13,7 +13,7 @@ pipeline {
        stage('Checkout') {
            steps {
                git branch: 'main',
-                   url: 'https://github.com/Anne035-data/4-final.git'
+                   url: 'https://github.com/Rom1Legrand/IAI-B4-MLops_pipeline_CoverTypeForest.git'
            }
        }
 

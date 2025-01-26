@@ -36,6 +36,11 @@ COPY jenkins-requirements.txt /tmp/requirements.txt
 RUN . /opt/venv/bin/activate && \
     pip install --no-cache-dir -r /tmp/requirements.txt
 
+# Configuration des dossiers Jenkins
+RUN mkdir -p /var/jenkins_home/monitoring_scripts && \
+    mkdir -p /var/jenkins_home/workspace && \
+    chown -R jenkins:jenkins /var/jenkins_home
+
 USER jenkins
 
 EXPOSE 8080 50000

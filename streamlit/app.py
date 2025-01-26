@@ -16,14 +16,9 @@ from evidently.metrics import *
 st.set_page_config(layout="wide")
 
 # Chargement des variables d'environnement
-# Définition des chemins
-root_dir = Path(__file__).parent.parent  
-env_path = root_dir / '.env'
-secrets_path = root_dir / '.secrets'
-
-# Chargement depuis les chemins définis
-load_dotenv(env_path)
-load_dotenv(secrets_path)
+parent_dir = Path(__file__).parent.parent
+load_dotenv(parent_dir / '.env')
+load_dotenv(parent_dir / '.secrets')
 
 st.title("🌲 Forest Cover Type - MLOps Monitor")
 
@@ -45,11 +40,11 @@ with tabs[0]:
 
         # Récupération dernier rapport de test sur S3
         response = s3.list_objects_v2(
-            Bucket=os.environ['S3_BUCKET'],
+            Bucket='rom1',
             Prefix='covertype/test_reports/'
         )
         latest_file = sorted([obj['Key'] for obj in response['Contents']])[-1]
-        obj = s3.get_object(Bucket=os.environ['S3_BUCKET'], Key=latest_file)
+        obj = s3.get_object(Bucket='rom1', Key=latest_file)
         test_df = pd.read_csv(obj['Body'])
 
         # mise en forme

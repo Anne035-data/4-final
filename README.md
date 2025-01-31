@@ -67,15 +67,15 @@ s3://S3bucket_name/covertype/
 2. **Environment Setup**
 ```bash
 # Clone repository
-git clone https://github.com/Anne035-data/4-final.git
-cd 4-final
+git clone https://github.com/Rom1Legrand/IAI-B4-MLops_pipeline_CoverTypeForest.git
+cd IAI-B4-MLops_pipeline_CoverTypeForest
 
 # Create environment files :
 # System Configuration
 AIRFLOW_UID=50000
 # Service URLs & Ports
 AIRFLOW_API_URL=http://airflow-webserver:8080
-MLFLOW_TRACKING_URI=http://mlflow:5000 or Hugging Face space URL (https://huggingface.co/spaces/username/space_name)
+MLFLOW_TRACKING_URI=http://mlflow:5000
 JENKINS_URL=http://jenkins:8080
 JENKINS_OPTS="--prefix=/jenkins"
 JENKINS_HOME=/var/jenkins_home
@@ -86,8 +86,10 @@ SMTP_PORT=587
 S3_BUCKET=your_bucket_name
 # Service Default Users (and cf docker-compose)
 AIRFLOW_USERNAME=xxxx
+MLFLOW_TRACKING_USERNAME=xxxx
 JENKINS_ADMIN_ID=xxxx
-
+# MLflow Configuration
+MLFLOW_DEFAULT_ARTIFACT_ROOT=s3://your_bucket/your_project_name/
 # NEON_DATABASE_URL (backend store for mlflow)
 NEON_DATABASE_URL=your_posgres_neondb_url
 
@@ -100,6 +102,7 @@ EMAIL_USER=your_email
 EMAIL_PASSWORD=your_email_password_or_token_key
 # Service Passwords
 AIRFLOW_PASSWORD=xxxx
+MLFLOW_TRACKING_PASSWORD=xxxx
 JENKINS_ADMIN_PASSWORD=xxxx
 
 ## Configure Credentials

@@ -67,8 +67,8 @@ s3://S3bucket_name/covertype/
 2. **Environment Setup**
 ```bash
 # Clone repository
-git clone https://github.com/Rom1Legrand/IAI-B4-MLops_pipeline_CoverTypeForest.git
-cd IAI-B4-MLops_pipeline_CoverTypeForest
+git clone https://github.com/Anne035-data/4-final.git
+cd 4-final.git
 
 # Create environment files :
 # System Configuration

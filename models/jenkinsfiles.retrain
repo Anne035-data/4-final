@@ -1,0 +1,39 @@
+pipeline {
+   agent any
+   
+   environment {
+       AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
+       AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+       NEON_DATABASE_URL     = credentials('NEON_DATABASE_URL')
+       DB_STORE_URI         = credentials('NEON_DATABASE_URL')
+       S3_BUCKET            = '4-final-project'
+       MLFLOW_TRACKING_URI = credentials('MLFLOW_TRACKING_URI') 
+   }
+
+   stages {
+       stage('Checkout') {
+           steps {
+               git branch: 'main',
+                   url: 'https://github.com/Anne035-data/4-final.git'
+           }
+       }
+
+       stage('Use MLflow Model') {
+           steps {
+               sh '''
+                   cd models
+                   python3 mlflow_model.py
+               '''
+           }
+       }
+   }
+   
+   post {
+       success {
+           echo 'Modèle réentraîné et enregistré dans MLflow avec succès!'
+       }
+       failure {
+           echo 'Erreur lors de l\'utilisation ou du réentraînement du modèle MLflow!'
+       }
+   }
+}

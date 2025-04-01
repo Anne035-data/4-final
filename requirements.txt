@@ -1,0 +1,14 @@
+boto3
+psycopg2-binary
+geopy
+joblib
+scikit-learn
+flask
+gunicorn
+mlflow==2.11.1
+werkzeug
+evidently
+python-dotenv
+requests
+sqlalchemy
+imbalanced-learn

@@ -1,0 +1,38 @@
+/.env
+/.secrets
+
+# Environnement et configuration
+.env
+.secrets
+*.env
+venv/
+.venv/
+env/
+
+# Caches Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Logs et résultats de tests
+logs/
+*.log
+test_reports/
+
+# Fichiers de données volumineux
+*.csv
+*.parquet
+*.pkl
+
+# Dossiers spécifiques
+airflow/logs/
+mlruns/
+
+# Fichiers Docker
+.docker/
+
+# IDE
+.idea/
+.vscode/
+*.swp

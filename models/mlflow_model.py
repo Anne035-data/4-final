@@ -197,7 +197,7 @@ def main():
             logging.info("Évaluation du modèle")
             y_pred = model.predict(X_new)
             accuracy = accuracy_score(y_new, y_pred)
-            f1 = f1_score(y_new, y_pred, average='weighted')
+            f1 = f1_score(y_new, y_pred, average='macro')
             
             logging.info(f"Métriques - Accuracy: {accuracy:.4f}, F1 Score: {f1:.4f}")
             
@@ -212,7 +212,7 @@ def main():
             # Évaluer sur les données de référence aussi pour voir la différence
             y_pred_ref = model.predict(X_ref)
             accuracy_ref = accuracy_score(y_ref, y_pred_ref)
-            f1_ref = f1_score(y_ref, y_pred_ref, average='weighted')
+            f1_ref = f1_score(y_ref, y_pred_ref, average='macro')
             
             logging.info(f"Métriques sur données de référence - Accuracy: {accuracy_ref:.4f}, F1 Score: {f1_ref:.4f}")
             

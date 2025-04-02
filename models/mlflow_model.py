@@ -39,28 +39,6 @@ def load_data_from_s3(bucket, reference_key, new_data_key):
         logging.error(f"Erreur lors du chargement des données depuis S3: {str(e)}")
         raise
 
-def get_model_version(client, model_name, version=1):
-    """Récupère une version spécifique du modèle dans MLflow"""
-    try:
-        model_version = client.get_model_version(model_name, version)
-        return model_version
-    except Exception as e:
-        logging.error(f"Erreur lors de la récupération de la version {version} du modèle: {str(e)}")
-        return None
-    
-def get_latest_model_version(client, model_name):
-    """Récupère la dernière version du modèle dans MLflow"""
-    try:
-        latest_version = 1
-        versions = client.get_latest_versions(model_name)
-        if versions:
-            # Trouver la version la plus récente
-            latest_version = max([int(v.version) for v in versions])
-        return latest_version
-    except Exception as e:
-        logging.error(f"Erreur lors de la récupération de la version du modèle: {str(e)}")
-        return 1  # Par défaut, retourner la version 1
-
 def main():
     # Récupérer les variables d'environnement
     mlflow_tracking_uri = os.environ.get('MLFLOW_TRACKING_URI', 'https://anneformation-mlflow-final-project.hf.space')
@@ -93,19 +71,6 @@ def main():
             reference_data, new_data = load_data_from_s3(s3_bucket, reference_file, new_data_file)
             logging.info(f"Données chargées - Référence: {reference_data.shape}, Nouvelles: {new_data.shape}")
             
-            # Définir les colonnes importantes
-            important_columns = [
-                'Elevation', 'Horizontal_Distance_To_Roadways', 'Horizontal_Distance_To_Fire_Points',
-                'Horizontal_Distance_To_Hydrology', 'Vertical_Distance_To_Hydrology', 'Aspect',
-                'Wilderness_Area4', 'Hillshade_Noon', 'Hillshade_3pm', 'Hillshade_9am', 'Slope',
-                'Soil_Type22', 'Soil_Type10', 'Soil_Type4', 'Soil_Type34', 'Wilderness_Area3', 
-                'Soil_Type12', 'Soil_Type2', 'Wilderness_Area1', 'Cover_Type'
-            ]
-
-            # Filtrer les dataframes pour ne conserver que les colonnes importantes
-            reference_data = reference_data[important_columns]          
-            new_data = new_data[important_columns]
-
             # Séparer les caractéristiques et la cible
             X_ref = reference_data.drop('Cover_Type', axis=1)
             y_ref = reference_data['Cover_Type']
@@ -113,12 +78,12 @@ def main():
             X_new = new_data.drop('Cover_Type', axis=1)
             y_new = new_data['Cover_Type']
             
-            # Option 1: Charger le dernier modèle existant depuis MLflow et le réentraîner
+            # Tentative de chargement du modèle depuis MLflow
             model_name = "forest_cover_type_model"
             logging.info(f"Recherche du modèle enregistré: {model_name}")
 
             try:
-                # Récupérer les versions du modèle et sélectionner la dernière
+                # Récupérer les versions du modèle
                 versions = client.get_latest_versions(model_name)
                 if not versions:
                     raise Exception(f"Aucune version du modèle {model_name} trouvée")
@@ -127,7 +92,7 @@ def main():
                 latest_version = max(versions, key=lambda v: int(v.version))
                 logging.info(f"Dernière version du modèle : {latest_version.version}")
                 
-                # Charger le modèle
+                # Charger le modèle avec l'URI standard MLflow
                 model_uri = f"models:/{model_name}/{latest_version.version}"
                 model = mlflow.sklearn.load_model(model_uri)
                 logging.info(f"Modèle chargé avec succès depuis {model_uri}")

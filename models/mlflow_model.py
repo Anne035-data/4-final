@@ -112,7 +112,7 @@ def main():
                     random_state=42,
                     n_jobs=-1
                 )
-                model.fit(X_ref, y_ref)
+                model.fit(X_new, y_new)
             
             # Évaluer le modèle
             logging.info("Évaluation du modèle")

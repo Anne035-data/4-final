@@ -9,6 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 import boto3
 import logging
 import json
+import time
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -20,12 +21,12 @@ def load_data_from_s3(bucket, reference_key, new_data_key):
         
         # Charger les données de référence
         logging.info(f"Chargement des données de référence depuis s3://{bucket}/{reference_key}")
-        ref_obj = s3.get_object(Bucket=bucket, Key=reference_file)
+        ref_obj = s3.get_object(Bucket=bucket, Key=reference_key)
         reference_data = pd.read_csv(ref_obj['Body'])
         
         # Charger les nouvelles données
         logging.info(f"Chargement des nouvelles données depuis s3://{bucket}/{new_data_key}")
-        new_obj = s3.get_object(Bucket=bucket, Key=new_data_file)
+        new_obj = s3.get_object(Bucket=bucket, Key=new_data_key)
         new_data = pd.read_csv(new_obj['Body'])
         
         # Analyser les données chargées
@@ -107,7 +108,11 @@ def main():
             y_new = new_data['Cover_Type']
             
             # Vérifier si les données X_new et X_ref sont différentes
-            is_same_data = X_new.equals(X_ref.iloc[:len(X_new)])
+            # On ne peut pas directement comparer en cas de différence de taille
+            if len(X_new) <= len(X_ref):
+                is_same_data = X_new.reset_index(drop=True).equals(X_ref.iloc[:len(X_new)].reset_index(drop=True))
+            else:
+                is_same_data = "Différente taille, comparaison impossible"
             logging.info(f"Les données X_new et X_ref sont-elles identiques? {is_same_data}")
             mlflow.log_param("is_same_data", str(is_same_data))
             
@@ -129,50 +134,45 @@ def main():
                 logging.info(f"Dernière version du modèle : {latest_version.version}")
                 
                 # Tester si le modèle existe vraiment
-                try:
-                    model_uri = f"models:/{model_name}/{latest_version.version}"
-                    logging.info(f"Tentative de chargement du modèle depuis: {model_uri}")
-                    model = mlflow.sklearn.load_model(model_uri)
-                    
-                    # Vérifier si le modèle peut prédire sur les données avant réentraînement
-                    sample_preds_before = model.predict(X_new.iloc[:5])
-                    logging.info(f"Prédictions sur échantillon avant réentraînement: {sample_preds_before}")
-                    
-                    logging.info(f"Modèle chargé avec succès depuis {model_uri}")
-                    
-                    # Identifier le type de modèle
-                    model_type = type(model).__name__
-                    logging.info(f"Type de modèle chargé: {model_type}")
-                    mlflow.log_param("loaded_model_type", model_type)
-                    
-                    # Enregistrer les paramètres actuels du modèle avant réentraînement
-                    if hasattr(model, 'get_params'):
-                        model_params = model.get_params()
-                        logging.info(f"Paramètres du modèle avant réentraînement: {json.dumps(model_params)}")
-                        mlflow.log_param("model_params_before", json.dumps(model_params))
-                    
-                    # Réentraîner avec les nouvelles données
-                    logging.info(f"Réentraînement du modèle avec les nouvelles données: {X_new.shape}")
-                    model_before = model
-                    model.fit(X_new, y_new)
-                    
-                    # Vérifier si le modèle a été modifié par le réentraînement
-                    if model is model_before:
-                        logging.info("Référence du modèle identique après fit")
-                    else:
-                        logging.info("Nouvelle référence de modèle après fit")
-                    
-                    # Vérifier si les paramètres ont changé
-                    if hasattr(model, 'get_params'):
-                        new_params = model.get_params()
-                        params_changed = new_params != model_params if 'model_params' in locals() else "Inconnu"
-                        logging.info(f"Les paramètres ont-ils changé? {params_changed}")
-                        mlflow.log_param("params_changed", str(params_changed))
-                        
-                except Exception as e:
-                    logging.error(f"Échec du chargement du modèle: {str(e)}")
-                    raise
+                model_uri = f"models:/{model_name}/{latest_version.version}"
+                logging.info(f"Tentative de chargement du modèle depuis: {model_uri}")
+                model = mlflow.sklearn.load_model(model_uri)
                 
+                # Vérifier si le modèle peut prédire sur les données avant réentraînement
+                sample_preds_before = model.predict(X_new.iloc[:5])
+                logging.info(f"Prédictions sur échantillon avant réentraînement: {sample_preds_before}")
+                
+                logging.info(f"Modèle chargé avec succès depuis {model_uri}")
+                
+                # Identifier le type de modèle
+                model_type = type(model).__name__
+                logging.info(f"Type de modèle chargé: {model_type}")
+                mlflow.log_param("loaded_model_type", model_type)
+                
+                # Enregistrer les paramètres actuels du modèle avant réentraînement
+                if hasattr(model, 'get_params'):
+                    model_params = model.get_params()
+                    logging.info(f"Paramètres du modèle avant réentraînement: {json.dumps(str(model_params))}")
+                    mlflow.log_param("model_params_before", str(model_params))
+                
+                # Réentraîner avec les nouvelles données
+                logging.info(f"Réentraînement du modèle avec les nouvelles données: {X_new.shape}")
+                model_before = model
+                model.fit(X_new, y_new)
+                
+                # Vérifier si le modèle a été modifié par le réentraînement
+                if model is model_before:
+                    logging.info("Référence du modèle identique après fit")
+                else:
+                    logging.info("Nouvelle référence de modèle après fit")
+                
+                # Vérifier si les paramètres ont changé
+                if hasattr(model, 'get_params'):
+                    new_params = model.get_params()
+                    params_changed = str(new_params) != str(model_params) if 'model_params' in locals() else "Inconnu"
+                    logging.info(f"Les paramètres ont-ils changé? {params_changed}")
+                    mlflow.log_param("params_changed", str(params_changed))
+                    
             except Exception as e:
                 logging.warning(f"Modèle non trouvé ou erreur de chargement: {str(e)}")
                 logging.info("Création d'un nouveau modèle RandomForest")
@@ -260,7 +260,6 @@ def main():
         return {"status": "error", "message": str(e)}
 
 if __name__ == "__main__":
-    import time
     result = main()
     logging.info(f"Résultat final: {result}")
     if result["status"] == "error":

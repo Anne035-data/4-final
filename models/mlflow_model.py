@@ -93,6 +93,19 @@ def main():
             reference_data, new_data = load_data_from_s3(s3_bucket, reference_file, new_data_file)
             logging.info(f"Données chargées - Référence: {reference_data.shape}, Nouvelles: {new_data.shape}")
             
+            # Définir les colonnes importantes
+            important_columns = [
+                'Elevation', 'Horizontal_Distance_To_Roadways', 'Horizontal_Distance_To_Fire_Points',
+                'Horizontal_Distance_To_Hydrology', 'Vertical_Distance_To_Hydrology', 'Aspect',
+                'Wilderness_Area4', 'Hillshade_Noon', 'Hillshade_3pm', 'Hillshade_9am', 'Slope',
+                'Soil_Type22', 'Soil_Type10', 'Soil_Type4', 'Soil_Type34', 'Wilderness_Area3', 
+                'Soil_Type12', 'Soil_Type2', 'Wilderness_Area1', 'Cover_Type'
+            ]
+
+            # Filtrer les dataframes pour ne conserver que les colonnes importantes
+            reference_data = reference_data[important_columns]          
+            new_data = new_data[important_columns]
+
             # Séparer les caractéristiques et la cible
             X_ref = reference_data.drop('Cover_Type', axis=1)
             y_ref = reference_data['Cover_Type']

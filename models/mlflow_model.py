@@ -113,23 +113,18 @@ def main():
             X_new = new_data.drop('Cover_Type', axis=1)
             y_new = new_data['Cover_Type']
             
-            # Option 1: Charger le modèle existant depuis MLflow et le réentraîner
+            # Option 1: Charger le modèle 1 existant depuis MLflow et le réentraîner
             model_name = "forest_cover_type_model"
             logging.info(f"Recherche du modèle enregistré: {model_name}")
 
             try:
-                # Récupérer la dernière version du modèle
-                latest_version = get_latest_model_version(client, model_name)
-                logging.info(f"Dernière version du modèle trouvée: {latest_version}")
-                
-                # Tenter de charger la dernière version du modèle
-                model_version = get_model_version(client, model_name, version=latest_version)
+                # Forcer l'utilisation de la version 1 du modèle
+                logging.info(f"Chargement de la version 1 du modèle {model_name}")
+                model_version = get_model_version(client, model_name, version=1)
                 
                 if model_version:
-                    logging.info(f"Chargement du modèle {model_name}, version {model_version.version}")
-                    
                     # Charger le modèle
-                    model_uri = f"models:/{model_name}/{model_version.version}"
+                    model_uri = f"models:/{model_name}/1"
                     model = mlflow.sklearn.load_model(model_uri)
                     logging.info(f"Modèle chargé avec succès depuis {model_uri}")
                     
@@ -137,7 +132,7 @@ def main():
                     logging.info("Réentraînement du modèle avec les nouvelles données")
                     model.fit(X_new, y_new)
                 else:
-                    raise Exception(f"Version {latest_version} du modèle {model_name} non trouvée dans MLflow")
+                    raise Exception(f"Version 1 du modèle {model_name} non trouvée dans MLflow")
             except Exception as e:
                 logging.warning(f"Modèle non trouvé ou erreur de chargement: {str(e)}")
                 logging.info("Création d'un nouveau modèle RandomForest")

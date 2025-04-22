@@ -281,7 +281,7 @@ docker-compose up -d
 ## 📹 Vidéos du Projet
 
 ### 📌 Présentation Synthétique (Recommandée)
-[![Présentation du Projet en 5 minutes](https://cdn.loom.com/sessions/thumbnails/9a7f59043092462489c48a6391eaf361-with-play.gif)](https://www.loom.com/share/9a7f59043092462489c48a6391eaf361?sid=a11c290e-585c-4c15-8293-7a52b6abf787)
+[Présentation du Projet en 5 minutes](https://www.loom.com/share/9a7f59043092462489c48a6391eaf361?sid=a11c290e-585c-4c15-8293-7a52b6abf787)
 *Une présentation claire et concise du projet en 5 minutes - idéale pour une première découverte*
 
 ### Documentation Technique Détaillée

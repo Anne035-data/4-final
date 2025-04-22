@@ -277,3 +277,9 @@ docker-compose up -d
 - Credentials are stored in `.env` and `.secrets` files (not versioned)
 - Sensitive variables defined in Jenkins, Airflow, and HuggingFace
 - Secure access to S3 via IAM
+
+Vidéo :
+Video Part 1 : https://www.loom.com/share/aad8b5869d46488a90035f431ab1c601?sid=36d1a972-7dfb
+400d-9861-99f401c28ee0 
+Video Part 2 : https://www.loom.com/share/6e2ec0c0c7d04fa3958ae8285e77c633?sid=aff6c926-236f
+4303-896a-83aad0eb7b68 

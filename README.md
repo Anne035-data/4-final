@@ -57,8 +57,7 @@ The complete architecture of the project is built around the following component
 ## 📹 Project Videos
 
 ### 📌 Summary
-[5-Minute Project Overview](https://www.loom.com/share/9a7f59043092462489c48a6391eaf361?sid=a11c290e-585c-4c15-8293-7a52b6abf787)
-*A clear and concise 5-minute project presentation - ideal for first discovery*
+  [5-Minute Project Overview](https://www.loom.com/share/9a7f59043092462489c48a6391eaf361?sid=a11c290e-585c-4c15-8293-7a52b6abf787) *A clear and concise 5-minute project presentation - ideal for first discovery*
 
 ### Detailed Technical Documentation
 - [Part 1: Architecture and Model](https://www.loom.com/share/aad8b5869d46488a90035f431ab1c601?sid=36d1a972-7dfb400d-9861-99f401c28ee0) - Architecture design and ML model implementation

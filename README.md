@@ -54,6 +54,16 @@ The complete architecture of the project is built around the following component
 ### APIs and Interfaces
 - **FastAPI**: API for data generation and testing
 
+## 📹 Vidéos du Projet
+
+### 📌 Présentation Synthétique (Recommandée)
+[Présentation du Projet en 5 minutes](https://www.loom.com/share/9a7f59043092462489c48a6391eaf361?sid=a11c290e-585c-4c15-8293-7a52b6abf787)
+*Une présentation claire et concise du projet en 5 minutes - idéale pour une première découverte*
+
+### Documentation Technique Détaillée
+- [Partie 1: Architecture et Modèle](https://www.loom.com/share/aad8b5869d46488a90035f431ab1c601?sid=36d1a972-7dfb400d-9861-99f401c28ee0) - Explication détaillée de l'architecture et du modèle
+- [Partie 2: Démonstration en Action](https://www.loom.com/share/6e2ec0c0c7d04fa3958ae8285e77c633?sid=aff6c926-236f4303-896a-83aad0eb7b68) - Le système en production avec explications
+
 ## 📦 Project Structure
 
 ```
@@ -278,12 +288,3 @@ docker-compose up -d
 - Sensitive variables defined in Jenkins, Airflow, and HuggingFace
 - Secure access to S3 via IAM
 
-## 📹 Vidéos du Projet
-
-### 📌 Présentation Synthétique (Recommandée)
-[Présentation du Projet en 5 minutes](https://www.loom.com/share/9a7f59043092462489c48a6391eaf361?sid=a11c290e-585c-4c15-8293-7a52b6abf787)
-*Une présentation claire et concise du projet en 5 minutes - idéale pour une première découverte*
-
-### Documentation Technique Détaillée
-- [Partie 1: Architecture et Modèle](https://www.loom.com/share/aad8b5869d46488a90035f431ab1c601?sid=36d1a972-7dfb400d-9861-99f401c28ee0) - Explication détaillée de l'architecture et du modèle
-- [Partie 2: Démonstration en Action](https://www.loom.com/share/6e2ec0c0c7d04fa3958ae8285e77c633?sid=aff6c926-236f4303-896a-83aad0eb7b68) - Le système en production avec explications
